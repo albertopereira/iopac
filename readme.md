@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/albertopereira/iopac.svg?branch=master)](https://travis-ci.org/albertopereira/iopac)
+
 # I-OPAC
 
 Implementation of an Online Public Access Catalog software, using Laravel 5. The code is entirely open source and licensed under [the MIT license](license.txt). Feel free to contribute by sending in a pull request.
