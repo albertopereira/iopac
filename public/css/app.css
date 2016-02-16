@@ -1,0 +1,36 @@
+.navbar-right .btn{
+	margin:-5px 5px 0px 0px;
+}
+
+.table-btn-group .btn, .object-view .btn{
+	float:left;
+	margin-right: 5px;
+}
+
+ul.object-view{
+	list-style-type: none;
+}
+
+.table td{
+	/* min-width: 200px; */
+}
+
+.record-fields{
+	padding-left: 30px;
+}
+
+.record-mandatory-field:after{
+	color:red;
+	content: ' *';
+}
+
+.dropdown-toggle-create{
+	padding:0px !important;
+	margin-right: 20px;
+}
+
+.superscript{
+	vertical-align: super;
+	font-size: 0.5em;
+	color:red;
+}
