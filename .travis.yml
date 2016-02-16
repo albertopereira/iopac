@@ -12,8 +12,4 @@ before_script:
   - php artisan key:generate
 
 script:
-<<<<<<< HEAD
-  - vendor/bin/phpunit
-=======
   - vendor/bin/phpunit tests/features
->>>>>>> 3a485dc... Setting up travis - 3
