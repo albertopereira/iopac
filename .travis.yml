@@ -1,0 +1,19 @@
+language: php
+
+php:
+  - 5.6
+
+before_script:
+  - cp .env.travis .env
+  - touch database/database_testing.sqlite
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan migrate --database=sqlite_testing
+  - php artisan key:generate
+
+script:
+<<<<<<< HEAD
+  - vendor/bin/phpunit
+=======
+  - vendor/bin/phpunit tests/features
+>>>>>>> 3a485dc... Setting up travis - 3

@@ -44,16 +44,6 @@ class SearchTest extends TestCase
 
     }
 
-    public function testSimpleSearchInAllTagfields()
-    {
-
-        $this->visit('/')
-             ->type('book', 'expressao')
-             ->press('Pesquisar')
-             ->see('book');
-
-    }
-
     public function testSimpleSearchByTitle()
     {
 

@@ -7,7 +7,7 @@
 
 **Clone the repository**
 
-    git clone https://aestevesp@bitbucket.org/aestevesp/iopac.git
+    git clone https://github.com/albertopereira/iopac.git
 
     cd iopac
 
@@ -57,12 +57,57 @@ Alternatively you can just
 
 **Create** a new user in the database (the user with an id of 1 in the database is the admin!)
 
+-----
+## Step 5: Setup the http server configuration
+
+Point the root directory of the web server to the public folder in your iopac installation.
 
 -----
-## Step 5: Start Page
+## Step 6: Set folder permissions
+
+Laravel needs the storage folder to have write permissions for the web server, so:
+
+     sudo chgrp -R www-data storage
+     sudo chmod -R ug+rwx storage
+
+-----
+## Step 7: Start Page
 
 You can now access the page and login at /admin.
 The default login and password are:
 
     USER: admin@example.com
     PASS: password
+
+-----
+## Next steps
+
+In the administration page, before creating records, you'll need to, in this order;
+
+    1 - Create one (or more) Biblio object
+    2 - Create one (or more) Itemtype object
+    3 - Create Marcfields and the correspondent Marcsubfields
+    4 - Edit the Itemtype objects to associate marcfields
+
+-----
+## Default marcfields
+
+**You can seed the database with default marcfields by using**
+
+Marc21 in English:
+
+    php artisan db:seed --class=MarcfieldsMarc21ENTableSeeder  
+    php artisan db:seed --class=MarcsubfieldsMarc21ENTableSeeder  
+       
+Unimarc in English:  
+
+    php artisan db:seed --class=MarcfieldsUnimarcENTableSeeder
+    php artisan db:seed --class=MarcsubfieldsUnimarcENTableSeeder
+     
+Unimarc in Portuguese:
+
+    php artisan db:seed --class=MarcfieldsUnimarcPTTableSeeder
+    php artisan db:seed --class=MarcsubfieldsUnimarcPTTableSeeder
+     
+**Alternatively you can use the sql files located in the folder install/data**
+     
