@@ -15,7 +15,7 @@ While there is no strict guideline right now, you are welcome to bring your idea
 
 As a rule of the thumb, keep **PSR-2** and **tests** in mind.
 
-# Reporting Issues
+## Reporting Issues
 
 For submitting an issue, please follow the steps below:
 
