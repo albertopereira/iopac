@@ -3,6 +3,9 @@ language: php
 php:
   - 5.6
 
+install:
+  - composer require satooshi/php-coveralls
+
 before_script:
   - cp .env.travis .env
   - touch database/database_testing.sqlite
@@ -12,16 +15,8 @@ before_script:
   - php artisan key:generate
 
 script:
-<<<<<<< HEAD
-<<<<<<< HEAD
-  - vendor/bin/phpunit
-=======
-  - vendor/bin/phpunit tests/features
->>>>>>> 3a485dc... Setting up travis - 3
-=======
   - mkdir -p build/logs 
   - vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests/features
-  
+
 after_script:
   - php vendor/bin/coveralls -v
->>>>>>> 7b41e8b... Update .travis.yml
