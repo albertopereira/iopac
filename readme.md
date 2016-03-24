@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/albertopereira/iopac.svg?branch=master)](https://travis-ci.org/albertopereira/iopac)
+[![Coverage Status](https://coveralls.io/repos/github/albertopereira/iopac/badge.svg?branch=master)](https://coveralls.io/github/albertopereira/iopac?branch=master)
 
 # I-OPAC
 
@@ -15,7 +16,7 @@ While there is no strict guideline right now, you are welcome to bring your idea
 
 As a rule of the thumb, keep **PSR-2** and **tests** in mind.
 
-# Reporting Issues
+## Reporting Issues
 
 For submitting an issue, please follow the steps below:
 
