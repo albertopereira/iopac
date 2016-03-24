@@ -12,4 +12,8 @@ before_script:
   - php artisan key:generate
 
 script:
-  - vendor/bin/phpunit tests/features
+  - mkdir -p build/logs 
+  - vendor/bin/phpunit --coverage-clover build/logs/clover.xml tests/features
+
+after_script:
+  - php vendor/bin/coveralls -v
