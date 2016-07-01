@@ -26,7 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
         $biblios = Biblio::All();
 
         $config_marcfields_search = Config::get('settings.marcfield_search');

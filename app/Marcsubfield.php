@@ -25,7 +25,7 @@ class Marcsubfield extends Model
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['tagfield', 'tagsubfield', 'description', 'repeatable', 'mandatory', 'hidden'];
+	protected $fillable = ['tagfield', 'tagsubfield', 'description', 'repeatable', 'mandatory', 'type', 'hidden'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.

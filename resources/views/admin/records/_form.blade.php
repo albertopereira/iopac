@@ -26,7 +26,17 @@
 							{!! Form::hidden('fields[' . $i . '][marcsubfield]', $marcsubfield->id ) !!}
 							{!! Form::hidden('fields[' . $i . '][mandatory]', $marcsubfield->mandatory ) !!}
 							{!! Form::label('fields[' . $i . '][value]', $marcsubfield->description . ' (' . $marcsubfield->tagsubfield . ')', ['class' => ($marcsubfield->mandatory == 1) ? 'record-mandatory-field' : '']) !!}
-							{!! Form::text('fields[' . $i . '][value]', $field->value, ['class' => 'form-control']) !!}
+							@if($marcsubfield->type == 'text')
+								{!! Form::text('fields[' . $i . '][value]', $field->value, ['class' => 'form-control']) !!}
+							@elseif($marcsubfield->type == 'longtext')
+								{!! Form::textarea('fields[' . $i . '][value]', $field->value, ['class' => 'form-control']) !!}
+							@elseif($marcsubfield->type == 'image')
+								{!! Form::file('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+							@endif
+							
+							@if($marcsubfield->type == 'image' && $field->value != '')
+								<img src="/images/<?php echo $field->value; ?>">
+							@endif
 						</div>
 						<?php $i++; ?>	
 					@endif
@@ -41,7 +51,13 @@
 							{!! Form::hidden('fields[' . $i . '][marcsubfield]', $marcsubfield->id ) !!}
 							{!! Form::hidden('fields[' . $i . '][mandatory]', $marcsubfield->mandatory ) !!}
 							{!! Form::label('fields[' . $i . '][value]', $marcsubfield->description . ' (' . $marcsubfield->tagsubfield . ')', ['class' => ($marcsubfield->mandatory == 1) ? 'record-mandatory-field' : '']) !!}
-							{!! Form::text('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+							@if($marcsubfield->type == 'text')
+								{!! Form::text('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+							@elseif($marcsubfield->type == 'longtext')
+								{!! Form::textarea('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+							@elseif($marcsubfield->type == 'image')
+								{!! Form::file('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+							@endif
 						</div>
 						<?php $i++;?>	
 				@endif
@@ -55,7 +71,13 @@
 					{!! Form::hidden('fields[' . $i . '][marcsubfield]', $marcsubfield->id ) !!}
 					{!! Form::hidden('fields[' . $i . '][mandatory]', $marcsubfield->mandatory ) !!}
 					{!! Form::label('fields[' . $i . '][value]', $marcsubfield->description . ' (' . $marcsubfield->tagsubfield . ')', ['class' => ($marcsubfield->mandatory == 1) ? 'record-mandatory-field' : '']) !!}
-					{!! Form::text('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+					@if($marcsubfield->type == 'text')
+						{!! Form::text('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+					@elseif($marcsubfield->type == 'longtext')
+						{!! Form::textarea('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+					@elseif($marcsubfield->type == 'image')
+						{!! Form::file('fields[' . $i . '][value]', null, ['class' => 'form-control']) !!}
+					@endif
 				</div>
 				<?php $i++; ?>
 			@endif

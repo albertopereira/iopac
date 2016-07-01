@@ -123,12 +123,33 @@ class RecordController extends Controller
 
 
     	$fields = array();
+        $field_index = 0;
 
     	foreach ($request->get('fields') as $field) {
+            if(isset($request->file('fields')[$field_index])){
+                $image = $request->file('fields')[$field_index]['value'];
+
+                $basename = $image->getClientOriginalName();
+                
+                $extension = $image->getClientOriginalExtension();
+                
+                $filename = basename($basename, '.' . $extension);
+
+                $image_name = $record->biblio . $record->itemtype . $field_index . '_' . $filename . '.' . $extension;
+
+                $image->move(public_path() . '/images', $image_name);
+
+            } else {
+                $image_name = '';
+            }
+
     		$rec = new RecordField;
     		$rec->tagfield = $field['marcfield'];
     		$rec->tagsubfield = $field['marcsubfield'];
-    		$rec->value = $field['value'];
+            if($image_name == '')
+                $rec->value = $field['value'];
+            else
+                $rec->value = $image_name;
 
     		$fields[] = $rec;
     	}
@@ -177,8 +198,27 @@ class RecordController extends Controller
 		$record->save();
 
     	$fields = array();
+        $field_index = 0;
 
     	foreach ($request->get('fields') as $field) {
+
+            if(isset($request->file('fields')[$field_index])){
+                $image = $request->file('fields')[$field_index]['value'];
+
+                $basename = $image->getClientOriginalName();
+                
+                $extension = $image->getClientOriginalExtension();
+                
+                $filename = basename($basename, '.' . $extension);
+
+                $image_name = $record->biblio . $record->itemtype . $field_index . '_' . $filename . '.' . $extension;
+
+                $image->move(public_path() . '/images', $image_name);
+
+            } else {
+                $image_name = '';
+            }
+
 
             if($field['id'] == '')
             {
@@ -192,9 +232,14 @@ class RecordController extends Controller
     		$rec->record_id = $id;
     		$rec->tagfield = $field['marcfield'];
     		$rec->tagsubfield = $field['marcsubfield'];
-    		$rec->value = $field['value'];
+    		if($image_name == '')
+                $rec->value = $field['value'];
+            else
+                $rec->value = $image_name;
 
     		$rec->save();
+
+            $field_index++;
     	}
 
     	flash()->success('Record edited with success.');

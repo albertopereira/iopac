@@ -13,7 +13,7 @@
 
                     @include('errors.list')
                    
-                	{!! Form::model($record, ['method' => 'PATCH',  'url' => ['admin/records', $record->id], 'id' => 'form-records']) !!}
+                	{!! Form::model($record, ['method' => 'PATCH',  'url' => ['admin/records', $record->id], 'id' => 'form-records', 'files' => true]) !!}
 						@include('admin.records._form', ['submitLabel' => 'Edit'])
 					{!! Form::close() !!}
                 </div>

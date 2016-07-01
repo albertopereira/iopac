@@ -13,7 +13,7 @@
 
                     @include('errors.list')
                    
-                	{!! Form::open(['url' => 'admin/records']) !!}
+                	{!! Form::open(['url' => 'admin/records', 'files' => true]) !!}
 						@include('admin.records._form', ['submitLabel' => 'Create'])
 					{!! Form::close() !!}
                 </div>

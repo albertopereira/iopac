@@ -20,6 +20,7 @@ class CreateMarcsubfieldsTable extends Migration
             $table->string('description');
             $table->tinyInteger('repeatable')->nullable()->default(0);
             $table->tinyInteger('mandatory')->nullable()->default(0);
+            $table->string('type')->nullable()->default('text');
             $table->tinyInteger('hidden')->nullable()->default(0);
             $table->timestamps();
         });
