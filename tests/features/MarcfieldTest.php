@@ -10,7 +10,7 @@ use App\Marcsubfield;
 
 class MarcfieldTest extends TestCase
 {
-
+    use DatabaseMigrations;
     use DatabaseTransactions;
 
     public function testMarcfieldHasATagfieldAndADescription()

@@ -89,7 +89,7 @@ class ItemtypeController extends Controller
 
         $marcfields = Marcfield::all();
 
-        $marcfields_in_itemtype = $itemtype->marcfields()->lists('id')->toArray();
+        $marcfields_in_itemtype = $itemtype->marcfields()->pluck('id')->toArray();
 
         return view('admin.itemtypes.edit', compact('itemtype', 'marcfields', 'marcfields_in_itemtype'));
 

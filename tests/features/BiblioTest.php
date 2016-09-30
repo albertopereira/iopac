@@ -9,7 +9,7 @@ use App\User;
 class BiblioTest extends TestCase
 {
 
-    //use DatabaseMigrations;
+    use DatabaseMigrations;
     use DatabaseTransactions;
 
     public function testBiblioHasAName()

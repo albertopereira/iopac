@@ -15,6 +15,7 @@ use App\Itemtype;
 class RecordTest extends TestCase
 {
 
+    use DatabaseMigrations;
 	use DatabaseTransactions;
     
     public function testCreateRecord()

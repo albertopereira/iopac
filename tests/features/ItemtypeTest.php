@@ -10,7 +10,7 @@ use App\Marcfield;
 class ItemtypeTest extends TestCase
 {
 
-    //use DatabaseMigrations;
+    use DatabaseMigrations;
     use DatabaseTransactions;
 
     public function testItemtypeHasAName()

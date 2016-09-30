@@ -8,7 +8,7 @@ use App\User;
 
 class UserTest extends TestCase
 {
-
+    use DatabaseMigrations;
     use DatabaseTransactions;
 
     public function testUserHasAName()

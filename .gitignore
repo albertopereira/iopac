@@ -1,5 +1,6 @@
-/vendor
 /node_modules
+/public/storage
+/vendor
 .env
 phpunit.xml
 /bootstrap/compiled.php

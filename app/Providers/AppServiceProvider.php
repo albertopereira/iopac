@@ -26,7 +26,6 @@ class AppServiceProvider extends ServiceProvider
 
         // Share the settings config file with the views
         View::share('config', Config::get('settings'));
-
     }
 
     /**

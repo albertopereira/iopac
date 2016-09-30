@@ -15,7 +15,7 @@ use App\RecordField;
 class SearchTest extends TestCase
 {
 
-    //use DatabaseMigrations;
+    use DatabaseMigrations;
     use DatabaseTransactions;
 
     protected $itemtype;
