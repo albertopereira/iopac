@@ -103,6 +103,7 @@
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Registro</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -110,7 +111,12 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li>
+                                    <form id="logout-form" class="logout-form" action="{{ url('/logout') }}" method="POST">
+                                        {{ csrf_field() }}
+                                        <a href="javascript:{}" onclick="document.getElementById('logout-form').submit(); return false;"><i class="fa fa-btn fa-sign-out"></i>Logout</a>
+                                    </form>
+                                </li>
                             </ul>
                         </li>
                     @endif

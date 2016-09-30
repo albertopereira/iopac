@@ -27,16 +27,6 @@ class User extends Authenticatable
 
 
     /**
-     * Mutator: changes the value of the attribute password.
-     *
-     * @param $value
-     */
-    public function setPasswordAttribute($value)
-    {
-        $this->attributes['password'] = bcrypt($value);
-    }
-
-    /**
      * Determines if the user is the administrator of the website.
      * The administrator is the first user of the database.
      * @return boolean [description]

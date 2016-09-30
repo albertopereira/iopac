@@ -48,6 +48,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('advanced-search', 'HomeController@advancedSearch');
 
     Route::get('/', 'HomeController@index');
+    
+    Route::get('/requisitions', 'RequisitionsController@index');
 
     Route::get('search', 'SearchController@search');
 

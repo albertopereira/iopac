@@ -31,6 +31,31 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <nav class="navbar navbar-default">
+                
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Registro</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <form id="logout-form" class="logout-form" action="{{ url('/logout') }}" method="POST">
+                                        {{ csrf_field() }}
+                                        <a href="javascript:{}" onclick="document.getElementById('logout-form').submit(); return false;"><i class="fa fa-btn fa-sign-out"></i>Logout</a>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
+
                 <div class="container">
                     <div class="navbar-header">
 
@@ -46,6 +71,7 @@
                         <a class="navbar-brand" href="{{ url('/') }}">
                             {{ $config['sitename'] }}
                         </a>
+
                     </div>
                 </div>
             </nav>
