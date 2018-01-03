@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 use App\Biblio;
 use App\User;
 
-class UserTest extends TestCase
+class UserTest extends \Tests\BrowserKitTestCase 
 {
     use DatabaseMigrations;
     use DatabaseTransactions;

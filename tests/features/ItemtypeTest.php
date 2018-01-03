@@ -7,7 +7,7 @@ use App\Itemtype;
 use App\User;
 use App\Marcfield;
 
-class ItemtypeTest extends TestCase
+class ItemtypeTest extends \Tests\BrowserKitTestCase  
 {
 
     use DatabaseMigrations;

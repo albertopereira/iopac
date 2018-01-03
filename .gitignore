@@ -11,3 +11,4 @@ composer.phar
 /_ide_helper.php
 /app/config/packages
 /public/packages
+/word2vec

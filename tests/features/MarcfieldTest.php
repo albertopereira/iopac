@@ -8,7 +8,7 @@ use App\User;
 use App\Marcfield;
 use App\Marcsubfield;
 
-class MarcfieldTest extends TestCase
+class MarcfieldTest extends \Tests\BrowserKitTestCase  
 {
     use DatabaseMigrations;
     use DatabaseTransactions;

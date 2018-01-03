@@ -12,7 +12,7 @@ use App\Record;
 use App\RecordField;
 use App\Itemtype;
 
-class RecordTest extends TestCase
+class RecordTest extends \Tests\BrowserKitTestCase  
 {
 
     use DatabaseMigrations;
